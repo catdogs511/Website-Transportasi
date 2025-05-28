@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" img src=""
+  <title>KAI SULSEL - Beranda</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Redirect to login.html if not logged in
+    if (!localStorage.getItem('kaiSulselLoggedIn')) {
+      window.location.href = 'login.html';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>KAI SULSEL</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="pesan.html">Pesan</a></li>
+          <li><a href="pembayaran.html">Pembayaran</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Transportasi Cerdas dan Nyaman</h2>
+      <p>Solusi perjalanan cepat, aman, dan hemat biaya dengan KAI SULSEL.</p>
+<a href="pesan.html" class="btn">Pesan Sekarang</a>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container">
+      <h3>Mengapa Pilih KAI SULSEL?</h3>
+      <div class="features">
+        <div class="feature">
+          <h4>Aman & Terpercaya</h4>
+          <p>Selalu mengutamakan keselamatan dan kenyamanan penumpang.</p>
+        </div>
+        <div class="feature">
+          <h4>Layanan 24 Jam</h4>
+          <p>Kapan pun Anda butuh, kami siap antar ke tujuan.</p>
+        </div>
+        <div class="feature">
+          <h4>Harga Terjangkau</h4>
+          <p>Tarif bersaing tanpa mengorbankan kualitas layanan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 KAI SULSEL. Semua hak dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>

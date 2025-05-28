@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pembayaran - KAI SULSEL</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Redirect to login.html if not logged in
+    if (!localStorage.getItem('kaiSulselLoggedIn')) {
+      window.location.href = 'login.html';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>KAI SULSEL</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="pesan.html">Pesan</a></li>
+          <li><a href="pembayaran.html" class="active">Pembayaran</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="pembayaran-page">
+    <div class="container">
+      <h2>Konfirmasi Pembayaran</h2>
+      <p>Silakan lengkapi form berikut untuk mengkonfirmasi pembayaran Anda.</p>
+
+      <form class="pembayaran-form" id="pembayaranForm">
+        <div class="form-group">
+          <label for="nama">Nama Pemesan</label>
+          <input type="text" id="nama" name="nama" required />
+        </div>
+
+        <div class="form-group">
+          <label for="metode">Metode Pembayaran</label>
+          <select id="metode" name="metode" required>
+            <option value="">-- Pilih Metode --</option>
+            <option value="transfer_bca">Transfer BCA</option>
+            <option value="transfer_bri">Transfer BRI</option>
+            <option value="transfer_mandiri">Transfer Mandiri</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="jumlah">Jumlah Pembayaran (Rp)</label>
+          <input type="number" id="jumlah" name="jumlah" required min="1" />
+        </div>
+
+        <div class="form-group">
+          <label for="tanggal">Tanggal Keberangkatan</label>
+          <input type="date" id="tanggal" name="tanggal" required />
+        </div>
+
+        <div class="form-group">
+          <label for="bukti">Upload Bukti Transfer</label>
+          <input type="file" id="bukti" name="bukti" accept="image/*,.pdf" required />
+        </div>
+
+        <button type="submit" class="btn">Kirim Konfirmasi</button>
+      </form>
+
+      <div id="simpleThankYou" style="display:none; margin-top: 30px; padding: 20px; border: 2px solid #0d6efd; border-radius: 10px; background-color: #f0f8ff; font-family: Arial, sans-serif;">
+        <h3>Terima Kasih! Tiket Anda sudah berhasil diproses:</h3>
+        <p><strong>Nama Pemesan:</strong> <span id="simpleNama"></span></p>
+        <p><strong>Metode Pembayaran:</strong> <span id="simpleMetode"></span></p>
+        <p><strong>Jumlah Pembayaran:</strong> Rp <span id="simpleJumlah"></span></p>
+        <p>⭐ 1x Tiket ARUMI 001</p>
+        <p><strong>Expired:</strong> <span id="simpleExpired"></span></p>
+        <p>----------</p>
+        <p>Semua tiket yang sudah dibeli dapat langsung dilihat di Website KAI SULSEL Anda.</p>
+        <p>Atau dapat diakses melalui link di bawah ini (gunakan sebelum expired):</p>
+        <p><a href="tiket.html" id="ticketLink" style="color: #0d6efd; text-decoration: underline; cursor: pointer;">Lihat Tiket Anda</a></p>
+        <p>----------</p>
+        <p><strong>Cara menggunakan tiket:</strong></p>
+        <ol>
+          <li>Buka Website KAI SULSEL dan masuk ke akun Anda.</li>
+          <li>Klik link di atas untuk akses tiket Anda.</li>
+          <li>Tunjukkan tiket ke petugas saat naik kereta.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('pembayaranForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Get form values
+      const nama = document.getElementById('nama').value;
+      const metode = document.getElementById('metode').value;
+      const jumlah = document.getElementById('jumlah').value;
+      const tanggal = document.getElementById('tanggal').value;
+
+      // Populate simple thank you message
+      document.getElementById('simpleNama').textContent = nama;
+      document.getElementById('simpleMetode').textContent = metode.replace(/_/g, ' ').toUpperCase();
+      document.getElementById('simpleJumlah').textContent = Number(jumlah).toLocaleString('id-ID');
+      const today = new Date();
+      const expireDate = new Date(today);
+      expireDate.setDate(today.getDate() + 7);
+      document.getElementById('simpleExpired').textContent = expireDate.toLocaleDateString('id-ID');
+
+      // Save ticket data to localStorage for tiket.html
+      const ticketData = {
+        nama: nama,
+        metode: metode.replace(/_/g, ' ').toUpperCase(),
+        jumlah: jumlah,
+        tanggal: new Date(tanggal).toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' }),
+        kereta: 'ARUMI 001',
+        dari: 'Makassar',
+        berangkat: '07:00',
+        tujuan: 'Maros',
+        tiba: '10:00',
+        kursi: 'A3'
+      };
+      localStorage.setItem('kaiSulselTicket', JSON.stringify(ticketData));
+
+      // Show simple thank you message and hide form
+      document.getElementById('simpleThankYou').style.display = 'block';
+      this.style.display = 'none';
+
+      // Disable form inputs and button
+      this.querySelectorAll('input, select, button').forEach(el => el.disabled = true);
+    });
+  </script>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 KAI SULSEL. Semua hak dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KAI SULSEL - Kontak</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Redirect to login.html if not logged in
+    if (!localStorage.getItem('kaiSulselLoggedIn')) {
+      window.location.href = 'login.html';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>KAI SULSEL</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="pesan.html">Pesan</a></li>
+          <li><a href="pembayaran.html">Pembayaran</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="kontak-page">
+    <div class="container">
+      <h2>Hubungi Kami</h2>
+      <p>Jika Anda memiliki pertanyaan atau membutuhkan bantuan, silakan hubungi kami melalui formulir di bawah ini.</p>
+
+      <div class="form-wrapper">
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Alamat Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="pesan" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn">Kirim Pesan</button>
+        </form>
+
+        <div class="kontak-info">
+          <h4>Alamat Kantor</h4>
+          <p>Jl. sultan alauddin No. 259, Makassar</p>
+          <h4>Email</h4>
+          <p>@kaisulsel.id</p>
+          <h4>Telepon</h4>
+          <p>+62 81524686135</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 KAI SULSEL. Semua hak dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>

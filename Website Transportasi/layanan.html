@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KAI SULSEL - Layanan Kami</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Redirect to login.html if not logged in
+    if (!localStorage.getItem('kaiSulselLoggedIn')) {
+      window.location.href = 'login.html';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>KAI SULSEL</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="pesan.html">Pesan</a></li>
+          <li><a href="pembayaran.html">Pembayaran</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="layanan-page">
+    <div class="container">
+      <h2>Layanan Kami</h2>
+      <p>Kami menyediakan berbagai layanan transportasi untuk kebutuhan Anda.</p>
+
+      <div class="cards">
+        <div class="card">
+          <img src="https://img.icons8.com/ios-filled/100/000000/train.png" alt="Kereta Api">
+          <h4>Kereta Api</h4>
+          <p>Solusi efisien dan cepat untuk bepergian di dalam kota.</p>
+        </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 KAI SULSEL. Semua hak dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>
