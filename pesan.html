@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KAI SULSEL - Transportasi</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Redirect to login.html if not logged in
+    if (!localStorage.getItem('kaiSulselLoggedIn')) {
+      window.location.href = 'login.html';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>KAI SULSEL</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a class="active" href="pesan.html">Pesan</a></li>
+          <li><a href="pembayaran.html">Pembayaran</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="pesan-form">
+    <div class="container">
+      <h2>Formulir Pemesanan</h2>
+      <form action="pembayaran.html" method="GET">
+        <div class="form-group">
+          <label>Nama Lengkap</label>
+          <input type="text" name="nama" required />
+        </div>
+        <div class="form-group">
+          <label>No. Telepon</label>
+          <input type="tel" name="telepon" required />
+        </div>
+        <div class="form-group">
+          <label>Jenis Layanan</label>
+          <select name="layanan" required>
+            <option value="">Pilih Layanan</option>
+            <option value="penumpang">Penumpang</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Rute Perjalanan</label>
+          <select name="rute" required>
+            <option value="">Pilih Rute</option>
+            <option value="Makassar-Maros">Makassar - Maros (Rp100.000)</option>
+            <option value="Makassar-Takalar">Makassar - Takalar (Rp100.000)</option>
+            <option value="Makassar-Palopo">Makassar - Palopo (Rp100.000)</option>
+            <option value="Makassar-Pare">Makassar - Pare (Rp100.000)</option>
+            <option value="Makassar-Kepulauan Selayar">Makassar - Kepulauan Selayar (Rp100.000)</option>
+            <option value="Makassar-jeneponto">Makassar - jeneponto  (Rp100.000)</option>
+            <option value="Makassar-Luwu">Makassar - Luwu (Rp100.000)</option>
+            <option value="Makassar-Luwu Timur">Makassar - Luwu Timur (Rp100.000)</option>
+            <option value="Makassar-Luwu Utara">Makassar - Luwu Utara (Rp100.000)</option>
+            <option value="Makassar-Enrekang">Makassar - Enrekang (Rp100.000)</option>
+            <option value="Makassar-Pinrang">Makassar - Pinrang (Rp100.000)</option>
+            <option value="Makassar-Pangkep">Makassar - Pangkep (Rp100.000)</option>
+            <option value="Makassar-Sidrap">Makassar - Sidrap (Rp100.000)</option>
+            <option value="Makassar-Soppeng">Makassar - Soppeng (Rp100.000)</option>
+            <option value="Makassar-Sinjai">Makassar - Sinjai (Rp100.000)</option>
+            <option value="Makassar-Tana Toraja">Makassar - Tana Toraja (Rp100.000)</option>
+            <option value="Makassar-Toraja Utara">Makassar - Toraja Utara (Rp100.000)</option>
+            <option value="Makassar-Wajo">Makassar - Wajo (Rp100.000)</option>
+            <option value="Makassar-Bantaeng">Makassar - Bantaeng (Rp100.000)</option>
+            <option value="Makassar-Bulukumba">Makassar - Bulukumba (Rp100.000)</option>
+            <option value="Makassar-Bone">Makassar - Bone (Rp100.000)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tanggal Keberangkatan</label>
+          <input type="date" name="tanggal" required />
+        </div>
+        <button class="btn" type="submit">Pesan Sekarang</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 KAI SULSEL. All rights reserved.</p>
+  </footer>
+</body>
+</html>

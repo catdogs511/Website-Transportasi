@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tiket KAI SULSEL</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #f9fbff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #0d6efd;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .ticket-container {
+      display: flex;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background-color: #e6f0ff;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .ticket-left, .ticket-right {
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .ticket-left {
+      flex: 2;
+      border-right: 2px dashed #0d6efd;
+    }
+    .ticket-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 14px;
+      color: #0d6efd;
+      border-bottom: 2px solid #0d6efd;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .ticket-body {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .passenger-name span {
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #555;
+    }
+    .passenger-name h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0d6efd;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .ticket-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 40px;
+    }
+    .ticket-info > div {
+      min-width: 120px;
+    }
+    .ticket-info span {
+      font-size: 12px;
+      color: #555;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+    .ticket-info p {
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0;
+      color: #0d6efd;
+      text-transform: uppercase;
+    }
+    .ticket-right {
+      flex: 1;
+      background: #0d6efd;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 15px;
+    }
+    .boarding-pass-header {
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      border-bottom: 2px solid white;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .boarding-pass-header span:last-child {
+      font-size: 12px;
+      font-weight: normal;
+    }
+    .boarding-pass-body > div {
+      margin-bottom: 15px;
+    }
+    .boarding-pass-body span {
+      font-size: 12px;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+    .boarding-pass-body h2 {
+      font-size: 20px;
+      margin: 0 0 5px 0;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .boarding-pass-body p {
+      margin: 0;
+      font-weight: bold;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tiket KAI SULSEL</h1>
+    <div class="ticket-container" id="ticketContainer" style="display:none;">
+      <div class="ticket-left">
+        <div class="ticket-header">
+          <span>TIKET KERETA API</span>
+          <span>KARTU BOARDING</span>
+        </div>
+        <div class="ticket-body">
+          <div class="passenger-name">
+            <span>NAMA PENUMPANG</span>
+            <h2 id="ticketNama"></h2>
+          </div>
+          <div class="ticket-info">
+            <div>
+              <span>HARGA</span>
+              <p>Rp<span id="ticketJumlah"></span></p>
+            </div>
+            <div>
+              <span>KERETA</span>
+              <p id="ticketKereta">1234</p>
+            </div>
+            <div>
+              <span>DARI</span>
+              <p id="ticketDari">-</p>
+            </div>
+            <div>
+              <span>KEBERANGKATAN</span>
+              <p id="ticketBerangkat">-</p>
+            </div>
+            <div>
+              <span>TUJUAN</span>
+              <p id="ticketTujuan">-</p>
+            </div>
+            <div>
+              <span>TIBA</span>
+              <p id="ticketTiba">-</p>
+            </div>
+            <div>
+              <span>TANGGAL</span>
+              <p id="ticketTanggal"></p>
+            </div>
+            <div>
+              <span>KURSI</span>
+              <p id="ticketKursi">-</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ticket-right">
+        <div class="boarding-pass-header">
+          <span>KARTU BOARDING</span>
+          <span>KELAS EKONOMI</span>
+        </div>
+        <div class="boarding-pass-body">
+          <div>
+            <span>NAMA PENUMPANG</span>
+            <h2 id="ticketNamaRight"></h2>
+          </div>
+          <div>
+            <span>DARI</span>
+            <p id="ticketDariRight">-</p>
+          </div>
+          <div>
+            <span>TUJUAN</span>
+            <p id="ticketTujuanRight">-</p>
+          </div>
+          <div>
+            <span>KERETA</span>
+            <p id="ticketKeretaRight">1234</p>
+          </div>
+          <div>
+            <span>KURSI</span>
+            <p id="ticketKursiRight">-</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p id="noTicketMessage" style="color: red; text-align: center; display:none;">Tiket tidak ditemukan.</p>
+  </div>
+
+  <script>
+    // For demo, we will get ticket data from localStorage or query params
+    // In real app, this would come from backend or secure storage
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadTicket() {
+      // Example: get ticket data from localStorage
+      const ticketData = JSON.parse(localStorage.getItem('kaiSulselTicket'));
+
+      if (ticketData) {
+        document.getElementById('ticketNama').textContent = ticketData.nama || '-';
+        document.getElementById('ticketNamaRight').textContent = ticketData.nama || '-';
+        document.getElementById('ticketJumlah').textContent = ticketData.jumlah ? Number(ticketData.jumlah).toLocaleString('id-ID') : '-';
+        document.getElementById('ticketKereta').textContent = ticketData.kereta || 'ARUMI 001';
+        document.getElementById('ticketKeretaRight').textContent = ticketData.kereta || 'ARUMI 001';
+        document.getElementById('ticketDari').textContent = ticketData.dari || '-';
+        document.getElementById('ticketDariRight').textContent = ticketData.dari || '-';
+        document.getElementById('ticketBerangkat').textContent = ticketData.berangkat || '-';
+        document.getElementById('ticketTujuan').textContent = ticketData.tujuan || '-';
+        document.getElementById('ticketTujuanRight').textContent = ticketData.tujuan || '-';
+        document.getElementById('ticketTiba').textContent = ticketData.tiba || '-';
+        document.getElementById('ticketTanggal').textContent = ticketData.tanggal || '-';
+        document.getElementById('ticketKursi').textContent = ticketData.kursi || '-';
+        document.getElementById('ticketKursiRight').textContent = ticketData.kursi || '-';
+
+        document.getElementById('ticketContainer').style.display = 'flex';
+        document.getElementById('noTicketMessage').style.display = 'none';
+      } else {
+        document.getElementById('ticketContainer').style.display = 'none';
+        document.getElementById('noTicketMessage').style.display = 'block';
+      }
+    }
+
+    window.onload = loadTicket;
+  </script>
+</body>
+</html>

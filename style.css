@@ -1,0 +1,441 @@
+/* RESET & UMUM */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* HEADER */
+header {
+  background-image: linear-gradient(90deg, #8B4513, #4169E1);
+  color: #fff;
+  padding: 20px 0;
+}
+
+header h1 {
+  float: left;
+  margin-left: 20px;
+}
+
+nav {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* FOOTER */
+footer {
+  background-image: linear-gradient(90deg, #8B4513, #4169E1);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+/* BERANDA */
+.hero {
+  background: url('WEBSITE 1.jpg') center/cover no-repeat;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #fff;
+  color: #0d6efd;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.hero .btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* LAYANAN */
+.layanan-page {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.layanan-page h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.layanan-page p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.card h4 {
+  margin-bottom: 10px;
+  color: #0d6efd;
+}
+
+/* TENTANG */
+.tentang-page {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.tentang-page .content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.tentang-page .image img {
+  max-width: 400px;
+  border-radius: 10px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.tentang-page .text {
+  max-width: 600px;
+}
+
+.tentang-page .text h3 {
+  color: #0d6efd;
+  margin-top: 20px;
+}
+
+.tentang-page .text ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  color: #444;
+}
+
+/* KONTAK */
+.kontak-page {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+/* TICKET STYLES */
+.ticket-container {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: #f9fbff;
+}
+
+.ticket-left, .ticket-right {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.ticket-left {
+  flex: 2;
+  background: #e6f0ff;
+  border-right: 2px dashed #0d6efd;
+  position: relative;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 14px;
+  color: #0d6efd;
+  border-bottom: 2px solid #0d6efd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.ticket-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.passenger-name span {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+.passenger-name h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0d6efd;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.ticket-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 40px;
+}
+
+.ticket-info > div {
+  min-width: 120px;
+}
+
+.ticket-info span {
+  font-size: 12px;
+  color: #555;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.ticket-info p {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+  color: #0d6efd;
+  text-transform: uppercase;
+}
+
+.ticket-right {
+  flex: 1;
+  background: #0d6efd;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 15px;
+}
+
+.boarding-pass-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  border-bottom: 2px solid white;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.boarding-pass-header span:last-child {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.boarding-pass-body > div {
+  margin-bottom: 15px;
+}
+
+.boarding-pass-body span {
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.boarding-pass-body h2 {
+  font-size: 20px;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.boarding-pass-body p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.kontak-page h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.kontak-page p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+form {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.kontak-info {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.kontak-info h4 {
+  margin-top: 20px;
+  color: #0d6efd;
+}
+
+/* PESAN SEKARANG */
+.pesan-page {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.pesan-page h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.pesan-page p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.pesan-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.pesan-form .form-group {
+  margin-bottom: 20px;
+}
+
+.pesan-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.pesan-form input,
+.pesan-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.pesan-form .btn {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pesan-form .btn:hover {
+  background-color: #084298;
+}
+
+#harga {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  color: #333;
+}
